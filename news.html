@@ -6,15 +6,12 @@
     <title>News – Bonterra Trattoria</title>
     <meta name="description" content="Stay updated with the latest events, wine dinners, and special offers at Bonterra Trattoria." />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
     <meta property="og:title" content="News – Bonterra Trattoria" />
     <meta property="og:description" content="Stay updated with the latest events, wine dinners, and special offers at Bonterra Trattoria." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bonterra-website.pages.dev/news.html" />
-    
-    <!-- Schema: Article List -->
+    <!-- Article Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -59,8 +56,7 @@
       ]
     }
     </script>
-    
-    <!-- Schema: Breadcrumb -->
+    <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -81,11 +77,23 @@
 
     <main>
         <section style="padding:140px 60px 80px;background:var(--cream);">
-            <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,4.2rem);font-weight:600;margin-bottom:12px;">Latest <span style="color:var(--gold);">News</span></h1>
-            <div class="news-list">
-                <div class="news-item reveal"><div class="date">July 20, 2026</div><h4>The Oak &amp; Priest Wine Dinner</h4><p>An exclusive evening of Tuscan wines and seasonal pairings.</p></div>
-                <div class="news-item reveal" style="transition-delay:0.1s;"><div class="date">July 20, 2026</div><h4>The Sunday Chop</h4><p>Our renowned Sunday steak experience — available after 4pm.</p></div>
-                <div class="news-item reveal" style="transition-delay:0.2s;"><div class="date">June 23, 2026</div><h4>Tuscan-Style Canada Day Patio Party</h4><p>Celebrate with spritz, barbecue, and live music on our terrace.</p></div>
+            <h1 style="font-family:'Fraunces',serif;font-size:clamp(2.8rem,6vw,4.2rem);font-weight:600;margin-bottom:12px;">Latest <span style="color:var(--bronze);">News</span></h1>
+            <div class="news-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px;">
+                <div class="news-item reveal" style="padding:28px 24px;border-bottom:1px solid rgba(0,0,0,0.06);transition:all 0.3s ease;">
+                    <div class="date" style="color:var(--bronze);font-size:0.7rem;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:4px;">July 20, 2026</div>
+                    <h4 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;">The Oak &amp; Priest Wine Dinner</h4>
+                    <p style="font-size:0.88rem;color:var(--espresso);">An exclusive evening of Tuscan wines and seasonal pairings.</p>
+                </div>
+                <div class="news-item reveal" style="transition-delay:0.1s;padding:28px 24px;border-bottom:1px solid rgba(0,0,0,0.06);transition:all 0.3s ease;">
+                    <div class="date" style="color:var(--bronze);font-size:0.7rem;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:4px;">July 20, 2026</div>
+                    <h4 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;">The Sunday Chop</h4>
+                    <p style="font-size:0.88rem;color:var(--espresso);">Our renowned Sunday steak experience — available after 4pm.</p>
+                </div>
+                <div class="news-item reveal" style="transition-delay:0.2s;padding:28px 24px;border-bottom:1px solid rgba(0,0,0,0.06);transition:all 0.3s ease;">
+                    <div class="date" style="color:var(--bronze);font-size:0.7rem;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:4px;">June 23, 2026</div>
+                    <h4 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;">Tuscan-Style Canada Day Patio Party</h4>
+                    <p style="font-size:0.88rem;color:var(--espresso);">Celebrate with spritz, barbecue, and live music on our terrace.</p>
+                </div>
             </div>
         </section>
     </main>
