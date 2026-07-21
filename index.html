@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonterra Trattoria – Authentic Italian Dining in Calgary</title>
+    <meta name="description" content="Experience the warmth of Tuscany at Bonterra Trattoria. Award‑winning Italian cuisine, candlelit ambiance, and handmade pasta in Calgary." />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bonterra Trattoria – Authentic Italian Dining" />
+    <meta property="og:description" content="Step into a Tuscan villa – candlelight, wine, olive trees, and handmade pasta." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Bonterra Trattoria",
+            "image": "https://yourdomain.com/images/CMWeddingWeb2.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1016 8 Street SW",
+                "addressLocality": "Calgary",
+                "addressRegion": "AB",
+                "postalCode": "T2R 1K2",
+                "addressCountry": "CA"
+            },
+            "telephone": "+14032628480",
+            "openingHours": "Mo-Fr 11:00-22:00, Sa 11:00-23:00, Su 11:00-22:00",
+            "priceRange": "$$$",
+            "servesCuisine": "Italian"
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation (same on all pages) -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="logo-wrap">
+                <svg viewBox="0 0 60 60" width="44" height="44">
+                    <ellipse cx="30" cy="30" rx="14" ry="16" fill="#5A6B3D" opacity="0.9" />
+                    <ellipse cx="30" cy="26" rx="8" ry="9" fill="#39462A" opacity="0.6" />
+                    <path d="M30 22 L34 14 L26 14 L30 22 Z" fill="#C5A46D" opacity="0.7" />
+                    <path d="M22 34 L14 30 L14 38 L22 34 Z" fill="#C5A46D" opacity="0.4" />
+                    <path d="M38 34 L46 30 L46 38 L38 34 Z" fill="#C5A46D" opacity="0.4" />
+                </svg>
+                <span class="logo-text">Bonterra <span>Trattoria</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reservations.html" class="reserve-btn">Reserve</a></li>
+            </ul>
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-bg">
+                <img src="images/CMWeddingWeb2.jpg" alt="Bonterra Trattoria interior with warm candlelight" loading="eager" />
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-particles" aria-hidden="true">
+                <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div>
+            </div>
+            <div class="hero-content">
+                <div class="pre-title">— Benvenuti</div>
+                <h1>Authentic<br /><span class="gold">Italian</span> Dining</h1>
+                <p>Step into a Tuscan villa where candlelight, olive trees, and handcrafted pasta define an evening of romance and culinary artistry.</p>
+                <div class="hero-buttons">
+                    <a href="reservations.html" class="btn-primary">Reserve a Table <span class="arrow">→</span></a>
+                    <a href="menu.html" class="btn-secondary">Explore Menus <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick intro / About teaser -->
+        <section id="about-teaser" style="padding:80px 60px;background:var(--warm-ivory);">
+            <div class="section-label">— Our Story</div>
+            <h2 class="section-title">A Taste of <span class="gold">Tuscany</span></h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px;">
+                <div>
+                    <img src="images/CMWeddingWeb4.jpg" alt="Bonterra dining room" style="width:100%;height:400px;object-fit:cover;border-radius:8px;" />
+                </div>
+                <div>
+                    <p style="font-size:1.05rem;color:var(--espresso);line-height:1.8;">At Bonterra Trattoria, we bring the soul of Tuscany to Calgary. Our kitchen is guided by time‑honoured Italian traditions, celebrating the freshest local ingredients with a Mediterranean spirit.</p>
+                    <blockquote style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;color:var(--espresso);border-left:3px solid var(--gold);padding-left:24px;margin:20px 0;">“Simple, bold flavours, shared with love around a candlelit table.”</blockquote>
+                    <a href="about.html" class="btn-primary" style="background:var(--charcoal);color:var(--off-white);border-color:var(--charcoal);">Discover More <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu preview cards -->
+        <section style="padding:80px 60px;background:var(--cream);">
+            <div class="section-label">— La Carta</div>
+            <h2 class="section-title">Our <span class="gold">Menus</span></h2>
+            <div class="menu-categories">
+                <div class="menu-category"><span class="cat-icon">🍝</span><h3>Pasta</h3><p>Handmade, fresh</p></div>
+                <div class="menu-category"><span class="cat-icon">🍕</span><h3>Pizza</h3><p>Wood‑fired</p></div>
+                <div class="menu-category"><span class="cat-icon">🍷</span><h3>Vino</h3><p>Curated wines</p></div>
+                <div class="menu-category"><span class="cat-icon">🍸</span><h3>Cocktails</h3><p>Signature spritzes</p></div>
+                <div class="menu-category"><span class="cat-icon">🍰</span><h3>Desserts</h3><p>Dolci</p></div>
+                <div class="menu-category"><span class="cat-icon">🥂</span><h3>Happy Hour</h3><p>Daily 2–4pm &amp; 9pm–close</p></div>
+            </div>
+            <div style="text-align:center;margin-top:40px;">
+                <a href="menu.html" class="btn-primary" style="background:var(--charcoal);color:var(--off-white);border-color:var(--charcoal);">View Full Menu <span class="arrow">→</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- same footer as before, with links to pages -->
+        <div class="footer-grid">
+            <div class="footer-brand"><div class="footer-logo">Bonterra <span>Trattoria</span></div><p>Contemporary Italian cuisine with Mediterranean soul.</p></div>
+            <div class="footer-col"><h5>Visit</h5><ul><li><a href="reservations.html">Reservations</a></li><li><a href="events.html">Events</a></li><li><a href="menu.html">Menus</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
+            <div class="footer-col"><h5>Info</h5><ul><li><a href="about.html">About</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Careers</a></li></ul></div>
+            <div class="footer-col"><h5>Connect</h5><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">OpenTable</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 Bonterra Trattoria</span><div class="socials"><a href="#">📷</a><a href="#">👍</a><a href="#">🍽</a></div></div>
+    </footer>
+
+    <!-- JavaScript (same as before, but no need for hero particles animation duplicate) -->
+    <script src="script.js"></script>
+</body>
+</html>

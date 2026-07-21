@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Reservations – Bonterra Trattoria</title><meta name="description" content="Book your table at Bonterra Trattoria. Enjoy Tuscan-inspired dining in Calgary."><link rel="stylesheet" href="style.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></head>
+<body>
+    <!-- LOADER, CURSOR, NAVBAR -->
+    <div id="loader">...</div><div class="custom-cursor" id="customCursor">...</div>
+    <header><nav class="navbar" id="navbar">... (copy nav with "reservations.html" as active) ...</nav></header>
+    <main>
+        <section style="padding:140px 60px 80px;background:var(--cream);">
+            <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,4.2rem);font-weight:600;margin-bottom:12px;">Reserve Your <span style="color:var(--gold);">Evening</span></h1>
+            <div class="reserve-grid">
+                <div class="reserve-info">
+                    <h3>Your Table Awaits</h3>
+                    <div class="hours">
+                        <strong>Lunch</strong> · Mon–Fri 11am–4pm<br />
+                        <strong>Happy Hour</strong> · Daily 2–4pm &amp; 9pm–close<br />
+                        <strong>Dinner</strong> · Sun–Thu 4–10pm · Fri–Sat 4–11pm
+                    </div>
+                    <p>For groups of 7 or more, please call <strong>(403) 262-8480</strong> or email <a href="mailto:events@creativeri.com" style="color:var(--gold);">events@creativeri.com</a>.</p>
+                    <p style="margin-top:12px;font-size:0.85rem;opacity:0.7;"><em>Patio reservations are available — weather-dependent, 2-hour limit.</em></p>
+                </div>
+                <form class="reserve-form" id="reserveForm">
+                    <div class="form-row"><div><label for="resName">Name</label><input type="text" id="resName" required /></div><div><label for="resEmail">Email</label><input type="email" id="resEmail" required /></div></div>
+                    <div class="form-row"><div><label for="resDate">Date</label><input type="date" id="resDate" required /></div><div><label for="resTime">Time</label><input type="time" id="resTime" required /></div></div>
+                    <div><label for="resGuests">Guests</label><select id="resGuests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select></div>
+                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;background:var(--gold);color:var(--charcoal);border-color:var(--gold);">Reserve My Evening <span class="arrow">→</span></button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>...</footer>
+    <script src="script.js"></script>
+    <script>document.getElementById('reserveForm').addEventListener('submit', function(e){e.preventDefault(); alert('✨ Your table awaits! A confirmation will be sent shortly.'); this.reset();});</script>
+</body>
+</html>
