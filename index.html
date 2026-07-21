@@ -1,178 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bonterra Trattoria – Authentic Italian Dining in Calgary</title>
-    <meta name="description" content="Experience the warmth of Tuscany at Bonterra Trattoria. Award‑winning Italian cuisine, candlelit ambiance, and handmade pasta in Calgary." />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Bonterra Trattoria – Authentic Italian Dining" />
-    <meta property="og:description" content="Step into a Tuscan villa – candlelight, wine, olive trees, and handmade pasta." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bonterra-website.pages.dev/" />
-    <meta property="og:image" content="https://bonterra-website.pages.dev/images/og-image.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    
-    <!-- Schema: Restaurant -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Bonterra Trattoria",
-        "image": "https://bonterra-website.pages.dev/images/CMWeddingWeb2.jpg",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1016 8 Street SW",
-            "addressLocality": "Calgary",
-            "addressRegion": "AB",
-            "postalCode": "T2R 1K2",
-            "addressCountry": "CA"
-        },
-        "telephone": "+14032628480",
-        "openingHours": "Mo-Fr 11:00-22:00, Sa 11:00-23:00, Su 11:00-22:00",
-        "priceRange": "$$$",
-        "servesCuisine": "Italian"
-    }
-    </script>
-    <!-- Schema: Breadcrumb -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bonterra-website.pages.dev/" }
-      ]
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonterra Trattoria — Contemporary Italian in Downtown Calgary</title>
+<meta name="description" content="Bonterra Trattoria is a contemporary Italian restaurant in downtown Calgary, known for a glass-enclosed wine cellar, stone fireplace, Tuscan-style terrace, and Bonterra-Tivo happy hour.">
+<link rel="canonical" href="https://bonterra-website.pages.dev/">
+<meta property="og:title" content="Bonterra Trattoria — Downtown Calgary">
+<meta property="og:description" content="Contemporary Italian fare, a glass-enclosed wine cellar, and a Tuscan-style terrace in the heart of downtown Calgary.">
+<meta property="og:type" content="restaurant">
+<meta property="og:url" content="https://bonterra-website.pages.dev/">
+<meta property="og:image" content="https://bonterra-website.pages.dev/images/hero-dining-room.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..700,0..1&family=Newsreader:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Bonterra Trattoria",
+  "image": "https://bonterra-website.pages.dev/images/hero-dining-room.jpg",
+  "url": "https://bonterra-website.pages.dev/",
+  "telephone": "+1-403-262-8480",
+  "servesCuisine": "Italian",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1016 8 Street SW",
+    "addressLocality": "Calgary",
+    "addressRegion": "AB",
+    "postalCode": "T2R 1K2",
+    "addressCountry": "CA"
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"11:00","closes":"22:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"16:00","closes":"23:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"16:00","closes":"22:00"}
+  ],
+  "sameAs": []
+}
+</script>
 </head>
 <body>
 
-    <!-- LOADER -->
-    <div id="loader">
-        <div class="vine-wrap">
-            <svg viewBox="0 0 200 200" fill="none">
-                <path class="vine-path" d="M100 180 C100 140, 80 120, 90 90 C100 60, 60 50, 50 30 C40 10, 70 20, 80 40 C90 60, 120 70, 130 50 C140 30, 170 20, 160 10" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round" />
-                <ellipse class="vine-leaf" cx="82" cy="82" rx="12" ry="7" transform="rotate(-30 82 82)" fill="#C5A46D" opacity="0.6"/>
-                <ellipse class="vine-leaf" cx="68" cy="42" rx="10" ry="6" transform="rotate(-50 68 42)" fill="#C5A46D" opacity="0.5"/>
-                <ellipse class="vine-leaf" cx="126" cy="62" rx="11" ry="6" transform="rotate(20 126 62)" fill="#C5A46D" opacity="0.5"/>
-                <ellipse class="vine-leaf" cx="152" cy="26" rx="10" ry="6" transform="rotate(40 152 26)" fill="#C5A46D" opacity="0.4"/>
-                <ellipse class="vine-leaf" cx="100" cy="130" rx="11" ry="6" transform="rotate(-10 100 130)" fill="#C5A46D" opacity="0.5"/>
-            </svg>
-        </div>
-        <div class="loader-label">Benvenuti</div>
+<div id="loader">
+  <div class="loader-mark"><img src="images/logo.svg" alt="Bonterra"></div>
+  <div class="loader-label">Bonterra Trattoria</div>
+</div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<header>
+  <a href="index.html" class="wordmark"><img src="images/logo.svg" alt=""> Bonterra</a>
+  <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <nav>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="reservations.html" class="nav-cta">Reserve</a>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-eyebrow">Downtown Calgary · 1016 8 Street SW</div>
+  <h1>Contemporary Italian,<br>poured slowly.</h1>
+  <p class="hero-sub">A wine cellar wall, a stone fireplace, a kitchen that treats simple ingredients seriously. This is Bonterra.</p>
+  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span><b>Bonterra-Tivo</b> — Happy Hour daily 2–4pm &amp; 9pm–close</span>
+    <span><b>$5</b> House-made focaccia, cultured butter</span>
+    <span><b>$12</b> Cocktails during Bonterra-Tivo</span>
+    <span><b>50% off</b> bottles of wine under $100</span>
+    <span><b>The Sunday Chop</b> — dine-in only, Sundays after 4pm</span>
+    <span><b>Bonterra-Tivo</b> — Happy Hour daily 2–4pm &amp; 9pm–close</span>
+    <span><b>$5</b> House-made focaccia, cultured butter</span>
+    <span><b>$12</b> Cocktails during Bonterra-Tivo</span>
+    <span><b>50% off</b> bottles of wine under $100</span>
+    <span><b>The Sunday Chop</b> — dine-in only, Sundays after 4pm</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="about-grid">
+    <img class="reveal" src="images/bonterra-wine-bar-560x420.jpg" alt="Bonterra wine bar" loading="lazy">
+    <div class="about-copy reveal">
+      <span class="section-head tag" style="margin-bottom:22px;">Since the room was built</span>
+      <p>Chandeliers, a glass-enclosed cellar, a stone fireplace that's warmed a thousand winter dinners — the room does a lot of the talking before the food even arrives.</p>
+      <p>The kitchen keeps to a Mediterranean line: bold, unfussy flavours, local ingredients, nothing over-worked. In warmer months the Tuscan-style terrace opens up like a second dining room.</p>
+      <div class="about-stats">
+        <div><b>Est. Award-Winning</b><span>Best Italian, Where to Dine 2017</span></div>
+        <div><b>Two Rooms</b><span>Fireplace lounge &amp; terrace</span></div>
+      </div>
+      <p style="margin-top:30px;"><a href="about.html" class="hh-cta" style="display:inline-block;">Read our story →</a></p>
     </div>
+  </div>
+</section>
 
-    <!-- CUSTOM CURSOR -->
-    <div class="custom-cursor" id="customCursor">
-        <svg class="cursor-dot" viewBox="0 0 40 40"><circle cx="20" cy="20" r="5" fill="#C5A46D"/></svg>
-        <svg class="cursor-ring" viewBox="0 0 60 60">
-            <circle cx="30" cy="30" r="26" fill="none" stroke="#C5A46D" stroke-width="1" opacity="0.6"/>
-            <path d="M30 6 Q34 14 30 22 Q26 14 30 6Z" fill="#4A5A2F" opacity="0.85"/>
-        </svg>
+<div class="olive-divider reveal"><div class="stem"></div><svg viewBox="0 0 40 40"><path d="M8,32 C12,22 16,14 28,8"/><path d="M12,26 C16,24 19,21 22,17"/><path d="M18,19 C22,16 25,13 27,10" /></svg><div class="stem"></div></div>
+
+<section id="menu">
+  <div class="section-head reveal">
+    <div>
+      <span class="tag">A taste of the table</span>
+      <h2>Selections from the dinner menu</h2>
     </div>
+    <p>Contemporary Italian fare, freshest local ingredients, a Mediterranean twist. <a href="menu.html" style="color:var(--brass);">See the full menu →</a></p>
+  </div>
+  <div class="menu-cards reveal">
+    <div class="menu-card">
+      <img class="dish-photo" src="images/dish-octopus.jpg" alt="Grilled octopus" loading="lazy">
+      <span class="cat">Antipasti</span>
+      <h3>To start</h3>
+      <div class="dish-row"><span class="dish-name">Grilled Octopus, calabrian chilli soy</span><span class="dish-price">28</span></div>
+      <div class="dish-row"><span class="dish-name">Bison Tartare, sous vide egg yolk</span><span class="dish-price">27</span></div>
+      <div class="dish-row"><span class="dish-name">Veal Meatballs, tomato sugo</span><span class="dish-price">19</span></div>
+      <div class="dish-row"><span class="dish-name">Arancini, whipped goat cheese cream</span><span class="dish-price">16</span></div>
+    </div>
+    <div class="menu-card">
+      <img class="dish-photo" src="images/dish-cacio-e-pepe.jpg" alt="Cacio e pepe" loading="lazy">
+      <span class="cat">Pasta</span>
+      <h3>Spaghetta-bout-it</h3>
+      <div class="dish-row"><span class="dish-name">Spaghetti Carbonara, guanciale</span><span class="dish-price">29</span></div>
+      <div class="dish-row"><span class="dish-name">Burrata Ravioli, kale pesto</span><span class="dish-price">32</span></div>
+      <div class="dish-row"><span class="dish-name">Shrimp &amp; Lobster Pappardelle</span><span class="dish-price">48</span></div>
+      <div class="dish-row"><span class="dish-name">Ricotta Gnocchi, salsa rosa</span><span class="dish-price">31</span></div>
+    </div>
+    <div class="menu-card">
+      <img class="dish-photo" src="images/dish-burrata.jpg" alt="Burrata" loading="lazy">
+      <span class="cat">Secondi</span>
+      <h3>The main event</h3>
+      <div class="dish-row"><span class="dish-name">Roasted Alberta Trout, puttanesca</span><span class="dish-price">44</span></div>
+      <div class="dish-row"><span class="dish-name">Brome Lake Half Duck, cherry jus</span><span class="dish-price">62</span></div>
+      <div class="dish-row"><span class="dish-name">Grilled Whole Branzino</span><span class="dish-price">58</span></div>
+      <div class="dish-row"><span class="dish-name">44oz Bone-In Ribeye, two contorni</span><span class="dish-price">198</span></div>
+    </div>
+  </div>
+  <p class="menu-note reveal">Full menu, wine list, and dessert card online — pick up through Chow Now, delivery through DoorDash.</p>
+</section>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar" id="navbar">
-            <a href="index.html" class="logo-wrap">
-                <svg viewBox="0 0 60 60" width="44" height="44">
-                    <ellipse cx="30" cy="30" rx="14" ry="16" fill="#5A6B3D" opacity="0.9" />
-                    <ellipse cx="30" cy="26" rx="8" ry="9" fill="#39462A" opacity="0.6" />
-                    <path d="M30 22 L34 14 L26 14 L30 22 Z" fill="#C5A46D" opacity="0.7" />
-                    <path d="M22 34 L14 30 L14 38 L22 34 Z" fill="#C5A46D" opacity="0.4" />
-                    <path d="M38 34 L46 30 L46 38 L38 34 Z" fill="#C5A46D" opacity="0.4" />
-                </svg>
-                <span class="logo-text">Bonterra <span>Trattoria</span></span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="reservations.html" class="reserve-btn">Reserve</a></li>
-            </ul>
-            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        </nav>
-    </header>
+<section id="happy-hour" style="padding:0;">
+  <div class="hh-band reveal">
+    <h2>Bonterra-Tivo, our Happy Hour</h2>
+    <p>Every day, 2–4pm &amp; 9pm to close. $5 bites, $12 cocktails, half-off select bottles, and the $5 Bon-Tiara — our mini charcuterie crown, served on top of your glass.</p>
+    <a href="menu.html#happy-hour" class="hh-cta">See the menu</a>
+  </div>
+</section>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero" id="home">
-            <div class="hero-bg">
-                <img src="images/CMWeddingWeb2.jpg" alt="Bonterra Trattoria dining room glowing with candlelight" loading="eager" />
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-particles" aria-hidden="true">
-                <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-                <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-                <div class="particle"></div><div class="particle"></div>
-            </div>
-            <div class="hero-content">
-                <div class="pre-title">— Benvenuti a Bonterra</div>
-                <h1>
-                    <span class="line"><span>Authentic</span></span>
-                    <span class="line"><span class="gold">Italian</span> Dining</span>
-                </h1>
-                <p>Step into a Tuscan villa where candlelight, olive trees, and handcrafted pasta define an evening of romance and culinary artistry — in the heart of Calgary.</p>
-                <div class="hero-buttons">
-                    <a href="reservations.html" class="btn-primary">Reserve a Table <span class="arrow">→</span></a>
-                    <a href="menu.html" class="btn-secondary">Explore Menus <span class="arrow">→</span></a>
-                </div>
-            </div>
-        </section>
+<section>
+  <div class="section-head reveal">
+    <div><span class="tag">From the guest book</span><h2>What Calgary's saying</h2></div>
+  </div>
+  <div class="reviews reveal">
+    <div class="review"><q>"Wonderful night — great service, and everyone enjoyed their meal. We'll return."</q><span class="who">Cathy, OpenTable</span></div>
+    <div class="review"><q>"One of my favourite dining experiences in Calgary. Every dish landed."</q><span class="who">Steph, OpenTable</span></div>
+    <div class="review">
+      <img src="images/cocktail-negroni.jpg" alt="Bonterra cocktail" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:2px;margin-bottom:18px;filter:sepia(0.1) contrast(1.05);">
+      <q style="font-size:16px;">"Great wine selection, attentive service — perfect for a date night."</q><span class="who">Chloe P., Yelp</span>
+    </div>
+  </div>
+</section>
 
-        <!-- About teaser -->
-        <section id="about-teaser" style="padding:80px 60px;background:var(--warm-ivory);">
-            <div class="section-label">— Our Story</div>
-            <h2 class="section-title">A Taste of <span class="gold">Tuscany</span></h2>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px;">
-                <div class="reveal-left">
-                    <img src="images/CMWeddingWeb4.jpg" alt="Bonterra dining room" style="width:100%;height:400px;object-fit:cover;border-radius:8px;" />
-                </div>
-                <div class="reveal-right">
-                    <p style="font-size:1.05rem;color:var(--espresso);line-height:1.8;">At Bonterra Trattoria, we bring the soul of Tuscany to Calgary. Our kitchen is guided by time‑honoured Italian traditions, celebrating the freshest local ingredients with a Mediterranean spirit.</p>
-                    <blockquote style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;color:var(--espresso);border-left:3px solid var(--gold);padding-left:24px;margin:20px 0;">“Simple, bold flavours, shared with love around a candlelit table.”</blockquote>
-                    <a href="about.html" class="btn-primary" style="background:var(--charcoal);color:var(--off-white);border-color:var(--charcoal);">Discover More <span class="arrow">→</span></a>
-                </div>
-            </div>
-        </section>
+<section style="padding-top:0;">
+  <div class="section-head reveal">
+    <div><span class="tag">Inside the room</span><h2>The fireplace, the cellar, the terrace</h2></div>
+    <p><a href="gallery.html" style="color:var(--brass);">View full gallery →</a></p>
+  </div>
+  <div class="strip reveal">
+    <figure><img src="images/IMG_9889-min-940x420.jpg" alt="Dining room"><figcaption>The dining room</figcaption></figure>
+    <figure><img src="images/terrace-sunset.jpg" alt="Terrace at sunset"><figcaption>Tuscan terrace</figcaption></figure>
+    <figure><img src="images/IMG_5061-940x420.jpg" alt="Private event space"><figcaption>Private events</figcaption></figure>
+  </div>
+</section>
 
-        <!-- Menu preview -->
-        <section style="padding:80px 60px;background:var(--cream);">
-            <div class="section-label">— La Carta</div>
-            <h2 class="section-title">Our <span class="gold">Menus</span></h2>
-            <div class="menu-categories">
-                <div class="menu-category reveal"><span class="cat-icon">🍝</span><h3>Pasta</h3><p>Handmade, fresh</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.1s;"><span class="cat-icon">🍕</span><h3>Pizza</h3><p>Wood‑fired</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.2s;"><span class="cat-icon">🍷</span><h3>Vino</h3><p>Curated wines</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.3s;"><span class="cat-icon">🍸</span><h3>Cocktails</h3><p>Signature spritzes</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.4s;"><span class="cat-icon">🍰</span><h3>Desserts</h3><p>Dolci</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.5s;"><span class="cat-icon">🥂</span><h3>Happy Hour</h3><p>Daily 2–4pm &amp; 9pm–close</p></div>
-            </div>
-            <div style="text-align:center;margin-top:40px;">
-                <a href="menu.html" class="btn-primary" style="background:var(--charcoal);color:var(--off-white);border-color:var(--charcoal);">View Full Menu <span class="arrow">→</span></a>
-            </div>
-        </section>
-    </main>
+<footer id="visit">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-word">Let's<br>eat.</div>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <p>1016 8 Street SW<br>Calgary, AB T2R 1K2</p>
+      <a href="tel:4032628480">(403) 262-8480</a>
+      <a href="mailto:info@bonterra.ca">info@bonterra.ca</a>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <p>Lunch — Mon–Fri, 11am–4pm</p>
+      <p>Dinner — Sun–Thu, 4–10pm</p>
+      <p>Dinner — Fri–Sat, 4–11pm</p>
+      <p>Happy Hour — daily, 2–4pm &amp; 9pm–close</p>
+    </div>
+    <div>
+      <h4>Reserve</h4>
+      <p>Groups of 7+, call or email directly.</p>
+      <a href="reservations.html">Book a table →</a>
+      <a href="events.html">Host an event →</a>
+      <a href="contact.html">Contact us →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Bonterra Trattoria</span>
+    <span><a href="contact.html">Contact</a> · <a href="news.html">News</a></span>
+  </div>
+</footer>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand"><div class="footer-logo">Bonterra <span>Trattoria</span></div><p>Contemporary Italian cuisine with Mediterranean soul.</p></div>
-            <div class="footer-col"><h5>Visit</h5><ul><li><a href="reservations.html">Reservations</a></li><li><a href="events.html">Events</a></li><li><a href="menu.html">Menus</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
-            <div class="footer-col"><h5>Info</h5><ul><li><a href="about.html">About</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Careers</a></li></ul></div>
-            <div class="footer-col"><h5>Connect</h5><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">OpenTable</a></li></ul></div>
-        </div>
-        <div class="footer-bottom"><span>&copy; 2026 Bonterra Trattoria</span><div class="socials"><a href="#">📷</a><a href="#">👍</a><a href="#">🍽</a></div></div>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
