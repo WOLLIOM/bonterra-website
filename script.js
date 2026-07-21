@@ -30,6 +30,42 @@ if (dot && ring && matchMedia('(hover:hover) and (pointer:fine)').matches) {
   document.addEventListener('mouseenter', () => { dot.style.opacity = 1; ring.style.opacity = 1; });
 }
 
+// cursor glow + drifting olive-leaf trail
+const glow = document.querySelector('.cursor-glow');
+if (glow && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  let gx = 0, gy = 0, tx = 0, ty = 0, lastLeaf = 0;
+  const leafPath = 'M8,15 C1,11 1,4 8,1 C15,4 15,11 8,15 Z M8,1 L8,15';
+  window.addEventListener('mousemove', (e) => {
+    tx = e.clientX; ty = e.clientY;
+    glow.classList.add('active');
+
+    const now = performance.now();
+    if (now - lastLeaf > 90) {
+      lastLeaf = now;
+      const leaf = document.createElement('div');
+      leaf.className = 'olive-leaf';
+      leaf.style.left = e.clientX + 'px';
+      leaf.style.top = e.clientY + 'px';
+      const angle = Math.random() * 360;
+      const dist = 30 + Math.random() * 50;
+      leaf.style.setProperty('--r0', angle + 'deg');
+      leaf.style.setProperty('--r1', (angle + (Math.random() > 0.5 ? 90 : -90)) + 'deg');
+      leaf.style.setProperty('--dx', (Math.cos(angle) * dist) + 'px');
+      leaf.style.setProperty('--dy', (Math.sin(angle) * dist - 20) + 'px');
+      leaf.innerHTML = '<svg viewBox="0 0 16 16"><path d="' + leafPath + '"/></svg>';
+      document.body.appendChild(leaf);
+      requestAnimationFrame(() => leaf.classList.add('drift'));
+      setTimeout(() => leaf.remove(), 1700);
+    }
+  });
+  document.addEventListener('mouseleave', () => glow.classList.remove('active'));
+  (function loopGlow() {
+    gx += (tx - gx) * 0.09; gy += (ty - gy) * 0.09;
+    glow.style.left = gx + 'px'; glow.style.top = gy + 'px';
+    requestAnimationFrame(loopGlow);
+  })();
+}
+
 // mobile nav
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('header nav');
