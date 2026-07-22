@@ -163,6 +163,31 @@ if (olive) {
   olive.addEventListener('pointercancel', endDrag);
 }
 
+// interactive hover tilt on photos
+const tiltTargets = document.querySelectorAll(
+  '.about-grid img, .strip img, .gallery-grid img, .dish-photo, .review img, .menu-card, .info-card'
+);
+if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  tiltTargets.forEach(el => {
+    el.style.transformStyle = 'preserve-3d';
+    el.style.willChange = 'transform, filter';
+    el.style.transition = 'transform 0.3s ease, filter 0.3s ease';
+    el.addEventListener('mousemove', (e) => {
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;
+      const py = (e.clientY - r.top) / r.height;
+      const rx = (0.5 - py) * 10;
+      const ry = (px - 0.5) * 10;
+      el.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.03)`;
+      el.style.filter = `brightness(${1 + (0.5 - Math.abs(px - 0.5)) * 0.12})`;
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = '';
+      el.style.filter = '';
+    });
+  });
+}
+
 // mobile nav
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('header nav');
