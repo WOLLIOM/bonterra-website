@@ -156,3 +156,10 @@ if (newsletterForm) {
     error: "Something went wrong signing up — please try again."
   });
 }
+const eventForm = document.getElementById('event-form');
+if (eventForm) {
+  submitToFormspree(eventForm, document.getElementById('event-note'), {
+    success: "Thanks — we've got your inquiry and will follow up soon.",
+    error: "Something went wrong sending that — please email Simon0021maxam@gmail.com directly."
+  });
+}

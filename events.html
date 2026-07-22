@@ -84,16 +84,17 @@
 
 <section style="padding-top:0;">
   <div class="section-head reveal"><div><span class="tag">Interested in hosting?</span><h2>Fill out our event inquiry form</h2></div></div>
-  <form id="contact-form" class="reveal">
+  <form id="event-form" class="reveal" action="https://formspree.io/f/mpqvljgz" method="POST">
+    <input type="hidden" name="_subject" value="New event inquiry from Bonterra website">
     <div class="form-grid">
-      <div><label for="e-name">Name</label><input type="text" id="e-name" required></div>
-      <div><label for="e-email">Email</label><input type="email" id="e-email" required></div>
-      <div><label for="e-date">Preferred date</label><input type="date" id="e-date"></div>
-      <div><label for="e-guests">Guest count</label><input type="number" id="e-guests" min="1"></div>
-      <div class="full"><label for="e-message">Tell us about your event</label><textarea id="e-message" required></textarea></div>
+      <div><label for="e-name">Name</label><input type="text" id="e-name" name="name" required></div>
+      <div><label for="e-email">Email</label><input type="email" id="e-email" name="email" required></div>
+      <div><label for="e-date">Preferred date</label><input type="date" id="e-date" name="preferred_date"></div>
+      <div><label for="e-guests">Guest count</label><input type="number" id="e-guests" name="guest_count" min="1"></div>
+      <div class="full"><label for="e-message">Tell us about your event</label><textarea id="e-message" name="message" required></textarea></div>
       <div class="full">
         <button type="submit" class="submit-btn">Send inquiry</button>
-        <p class="form-note" id="contact-note">Our events manager typically replies within 72 hours during peak season.</p>
+        <p class="form-note" id="event-note">Our events manager typically replies within 72 hours during peak season.</p>
       </div>
     </div>
   </form>
