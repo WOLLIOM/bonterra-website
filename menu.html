@@ -64,47 +64,67 @@
 </head>
 <body>
 
-    <!-- LOADER, CURSOR, NAVBAR (same as index) -->
-    <div id="loader"><div class="loader-greet" id="loaderGreet"></div><div class="vine-wrap"><svg viewBox="0 0 200 200" fill="none"><path class="vine-path" d="M100 180 C100 140, 80 120, 90 90 C100 60, 60 50, 50 30 C40 10, 70 20, 80 40 C90 60, 120 70, 130 50 C140 30, 170 20, 160 10" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round" /><ellipse class="vine-leaf" cx="82" cy="82" rx="12" ry="7" transform="rotate(-30 82 82)" fill="#C5A46D" opacity="0.6"/><ellipse class="vine-leaf" cx="68" cy="42" rx="10" ry="6" transform="rotate(-50 68 42)" fill="#C5A46D" opacity="0.5"/><ellipse class="vine-leaf" cx="126" cy="62" rx="11" ry="6" transform="rotate(20 126 62)" fill="#C5A46D" opacity="0.5"/><ellipse class="vine-leaf" cx="152" cy="26" rx="10" ry="6" transform="rotate(40 152 26)" fill="#C5A46D" opacity="0.4"/><ellipse class="vine-leaf" cx="100" cy="130" rx="11" ry="6" transform="rotate(-10 100 130)" fill="#C5A46D" opacity="0.5"/></svg></div><div class="loader-label">Benvenuti</div></div>
-    <div class="custom-cursor" id="customCursor"><svg class="cursor-dot" viewBox="0 0 40 40"><circle cx="20" cy="20" r="5" fill="#C5A46D"/></svg><svg class="cursor-ring" viewBox="0 0 60 60"><circle cx="30" cy="30" r="26" fill="none" stroke="#C5A46D" stroke-width="1" opacity="0.6"/><path d="M30 6 Q34 14 30 22 Q26 14 30 6Z" fill="#4A5A2F" opacity="0.85"/></svg></div>
+    <!-- LOADER, CURSOR, HEADER (shared across site) -->
+    <div id="loader">
+      <div class="loader-greet" id="loaderGreet"></div>
+      <div class="loader-mark"><img src="images/logo.png" alt="Bonterra"></div>
+      <div class="loader-label">Bonterra Trattoria</div>
+    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
     <div class="cursor-glow"></div>
-    <header><nav class="navbar" id="navbar"><a href="index.html" class="logo-wrap"><svg viewBox="0 0 60 60" width="44" height="44"><ellipse cx="30" cy="30" rx="14" ry="16" fill="#5A6B3D" opacity="0.9"/><ellipse cx="30" cy="26" rx="8" ry="9" fill="#39462A" opacity="0.6"/><path d="M30 22 L34 14 L26 14 L30 22 Z" fill="#C5A46D" opacity="0.7"/><path d="M22 34 L14 30 L14 38 L22 34 Z" fill="#C5A46D" opacity="0.4"/><path d="M38 34 L46 30 L46 38 L38 34 Z" fill="#C5A46D" opacity="0.4"/></svg><span class="logo-text">Bonterra <span>Trattoria</span></span></a><ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="menu.html" class="active">Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a href="reservations.html" class="reserve-btn">Reserve</a></li></ul><button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button></nav></header>
+
+    <header>
+      <a href="index.html" class="wordmark"><img src="images/logo-icon.png" alt="Bonterra Trattoria olive branch logo"> Bonterra</a>
+      <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="menu.html" style="color:var(--brass);">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="reservations.html" class="nav-cta">Reserve</a>
+    </header>
 
     <main>
-        <section style="padding:140px 60px 80px;background:var(--cream);">
-            <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,4.2rem);font-weight:600;margin-bottom:12px;">Our <span style="color:var(--gold);">Menus</span></h1>
-            <p style="font-size:1.1rem;color:var(--espresso);max-width:600px;margin-bottom:40px;">Contemporary Italian fare with a Mediterranean twist — crafted from the finest local ingredients.</p>
+        <section class="page-hero" style="min-height:auto;padding:140px 5vw 8vh;background:var(--ink);">
+            <h1 style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(2.8rem,6vw,4.2rem);margin-bottom:12px;color:var(--parchment);">Our <span style="color:var(--brass);">Menus</span></h1>
+            <p style="font-size:1.1rem;color:var(--parchment-dim);max-width:600px;margin-bottom:40px;">Contemporary Italian fare with a Mediterranean twist — crafted from the finest local ingredients.</p>
 
-            <div class="menu-categories">
-                <div class="menu-category reveal"><span class="cat-icon">🍝</span><h3>Pasta</h3><p>Handmade &amp; traditional</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.1s;"><span class="cat-icon">🍕</span><h3>Pizza</h3><p>Wood‑fired</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.2s;"><span class="cat-icon">🍷</span><h3>Vino</h3><p>Curated wines</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.3s;"><span class="cat-icon">🍸</span><h3>Cocktails</h3><p>Signature spritzes</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.4s;"><span class="cat-icon">🍰</span><h3>Desserts</h3><p>Dolci</p></div>
-                <div class="menu-category reveal" style="transition-delay:0.5s;"><span class="cat-icon">🥂</span><h3>Happy Hour</h3><p>Daily 2–4pm &amp; 9pm–close</p></div>
+            <div class="menu-categories" style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;">
+                <div class="reveal" style="background:var(--ink-2);border:1px solid var(--line);padding:20px 10px;text-align:center;border-radius:2px;"><span style="font-size:26px;">🍝</span><h3 style="font-size:16px;font-style:italic;margin:10px 0 4px;color:var(--parchment);">Pasta</h3><p style="font-size:12px;color:var(--parchment-dim);">Handmade &amp; traditional</p></div>
+                <div class="reveal" style="background:var(--ink-2);border:1px solid var(--line);padding:20px 10px;text-align:center;border-radius:2px;transition-delay:0.1s;"><span style="font-size:26px;">🍕</span><h3 style="font-size:16px;font-style:italic;margin:10px 0 4px;color:var(--parchment);">Pizza</h3><p style="font-size:12px;color:var(--parchment-dim);">Wood‑fired</p></div>
+                <div class="reveal" style="background:var(--ink-2);border:1px solid var(--line);padding:20px 10px;text-align:center;border-radius:2px;transition-delay:0.2s;"><span style="font-size:26px;">🍷</span><h3 style="font-size:16px;font-style:italic;margin:10px 0 4px;color:var(--parchment);">Vino</h3><p style="font-size:12px;color:var(--parchment-dim);">Curated wines</p></div>
+                <div class="reveal" style="background:var(--ink-2);border:1px solid var(--line);padding:20px 10px;text-align:center;border-radius:2px;transition-delay:0.3s;"><span style="font-size:26px;">🍸</span><h3 style="font-size:16px;font-style:italic;margin:10px 0 4px;color:var(--parchment);">Cocktails</h3><p style="font-size:12px;color:var(--parchment-dim);">Signature spritzes</p></div>
+                <div class="reveal" style="background:var(--ink-2);border:1px solid var(--line);padding:20px 10px;text-align:center;border-radius:2px;transition-delay:0.4s;"><span style="font-size:26px;">🍰</span><h3 style="font-size:16px;font-style:italic;margin:10px 0 4px;color:var(--parchment);">Desserts</h3><p style="font-size:12px;color:var(--parchment-dim);">Dolci</p></div>
+                <div class="reveal" style="background:var(--ink-2);border:1px solid var(--line);padding:20px 10px;text-align:center;border-radius:2px;transition-delay:0.5s;"><span style="font-size:26px;">🥂</span><h3 style="font-size:16px;font-style:italic;margin:10px 0 4px;color:var(--parchment);">Happy Hour</h3><p style="font-size:12px;color:var(--parchment-dim);">Daily 2–4pm &amp; 9pm–close</p></div>
             </div>
 
             <div style="margin-top:60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-                <div class="reveal-left" style="background:var(--warm-ivory);padding:32px;border-radius:8px;">
-                    <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;border-bottom:2px solid var(--gold);padding-bottom:10px;">Antipasti</h3>
+                <div class="reveal" style="background:var(--ink-2);border:1px solid var(--line);padding:32px;border-radius:2px;">
+                    <h3 style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.8rem;border-bottom:2px solid var(--brass);padding-bottom:10px;color:var(--parchment);">Antipasti</h3>
                     <ul style="list-style:none;margin-top:20px;">
-                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.05);"><span>Sicilian Amberjack Crudo</span><span style="color:var(--gold);">$26</span></li>
-                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.05);"><span>Grilled Octopus</span><span style="color:var(--gold);">$28</span></li>
-                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.05);"><span>Bison Tartare</span><span style="color:var(--gold);">$27</span></li>
-                        <li style="display:flex;justify-content:space-between;padding:8px 0;"><span>Veal Meatballs</span><span style="color:var(--gold);">$19</span></li>
+                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);color:var(--parchment-dim);"><span>Sicilian Amberjack Crudo</span><span style="color:var(--brass);">$26</span></li>
+                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);color:var(--parchment-dim);"><span>Grilled Octopus</span><span style="color:var(--brass);">$28</span></li>
+                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);color:var(--parchment-dim);"><span>Bison Tartare</span><span style="color:var(--brass);">$27</span></li>
+                        <li style="display:flex;justify-content:space-between;padding:8px 0;color:var(--parchment-dim);"><span>Veal Meatballs</span><span style="color:var(--brass);">$19</span></li>
                     </ul>
                 </div>
-                <div class="reveal-right" style="background:var(--warm-ivory);padding:32px;border-radius:8px;">
-                    <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;border-bottom:2px solid var(--gold);padding-bottom:10px;">Pasta</h3>
+                <div class="reveal" style="background:var(--ink-2);border:1px solid var(--line);padding:32px;border-radius:2px;">
+                    <h3 style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.8rem;border-bottom:2px solid var(--brass);padding-bottom:10px;color:var(--parchment);">Pasta</h3>
                     <ul style="list-style:none;margin-top:20px;">
-                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.05);"><span>Spaghetti Carbonara</span><span style="color:var(--gold);">$29</span></li>
-                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.05);"><span>Shrimp &amp; Lobster Pappardelle</span><span style="color:var(--gold);">$48</span></li>
-                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.05);"><span>Burrata Ravioli</span><span style="color:var(--gold);">$32</span></li>
-                        <li style="display:flex;justify-content:space-between;padding:8px 0;"><span>Ricotta Gnocchi</span><span style="color:var(--gold);">$31</span></li>
+                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);color:var(--parchment-dim);"><span>Spaghetti Carbonara</span><span style="color:var(--brass);">$29</span></li>
+                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);color:var(--parchment-dim);"><span>Shrimp &amp; Lobster Pappardelle</span><span style="color:var(--brass);">$48</span></li>
+                        <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);color:var(--parchment-dim);"><span>Burrata Ravioli</span><span style="color:var(--brass);">$32</span></li>
+                        <li style="display:flex;justify-content:space-between;padding:8px 0;color:var(--parchment-dim);"><span>Ricotta Gnocchi</span><span style="color:var(--brass);">$31</span></li>
                     </ul>
                 </div>
             </div>
-            <div style="text-align:center;margin-top:40px;"><a href="reservations.html" class="btn-primary">Reserve a Table <span class="arrow">→</span></a></div>
+            <div style="text-align:center;margin-top:40px;"><a href="reservations.html" class="hh-cta">Reserve a Table →</a></div>
         </section>
     </main>
 
@@ -112,7 +132,7 @@
 
     <section style="padding-top:0;">
       <div class="about-grid" style="grid-template-columns:0.8fr 1.2fr;">
-        <img class="reveal" src="images/simon.jpg" alt="Simon Maxam, creator of this website" loading="lazy">
+        <img class="reveal" src="images/logo.png" alt="Simon Maxam, creator of this website" loading="lazy">
         <div class="about-copy reveal">
           <span class="section-head tag" style="margin-bottom:22px;">Behind the site</span>
           <p>This website was designed and built locally by Simon Maxam — a Calgary, Alberta-based entrepreneur and creative technologist working across web design, game development, and 3D art with tools like Unreal Engine and Blender.</p>

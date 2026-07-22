@@ -85,6 +85,34 @@ if (glow && matchMedia('(hover:hover) and (pointer:fine)').matches) {
   })();
 }
 
+// header background on scroll (keeps nav legible over any content)
+const siteHeader = document.querySelector('header');
+if (siteHeader) {
+  const setHeaderState = () => {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  setHeaderState();
+  window.addEventListener('scroll', setHeaderState, { passive: true });
+}
+
+// background music toggle
+const musicToggle = document.getElementById('musicToggle');
+const bgAudio = document.getElementById('bgAudio');
+if (musicToggle && bgAudio) {
+  bgAudio.volume = 0.35;
+  musicToggle.addEventListener('click', () => {
+    if (bgAudio.paused) {
+      bgAudio.play().catch(() => {});
+      musicToggle.classList.add('playing');
+      musicToggle.setAttribute('aria-pressed', 'true');
+    } else {
+      bgAudio.pause();
+      musicToggle.classList.remove('playing');
+      musicToggle.setAttribute('aria-pressed', 'false');
+    }
+  });
+}
+
 // mobile nav
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('header nav');
