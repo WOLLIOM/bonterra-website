@@ -131,36 +131,109 @@ if (musicToggle && bgAudio) {
   });
 }
 
-// draggable floating olive
+// draggable, throwable, wall-bouncing olive — with a heavenly entrance
 const olive = document.getElementById('driftOlive');
 if (olive) {
-  let dragging = false, offX = 0, offY = 0;
-  const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+  const W = () => olive.offsetWidth, H = () => olive.offsetHeight;
+  let x = window.innerWidth * 0.82;
+  let y = window.innerHeight * 0.35;
+  let vx = 0, vy = 0;
+  let dragging = false;
+  let physicsActive = false;
+  let history = [];
 
-  const startDrag = (x, y) => {
-    dragging = true;
-    olive.classList.add('dragging');
-    const rect = olive.getBoundingClientRect();
-    offX = x - rect.left;
-    offY = y - rect.top;
-  };
-  const moveDrag = (x, y) => {
-    if (!dragging) return;
-    const w = olive.offsetWidth, h = olive.offsetHeight;
-    const left = clamp(x - offX, 4, window.innerWidth - w - 4);
-    const top = clamp(y - offY, 4, window.innerHeight - h - 4);
-    olive.style.left = left + 'px';
-    olive.style.top = top + 'px';
-  };
-  const endDrag = () => { dragging = false; olive.classList.remove('dragging'); };
+  const place = () => { olive.style.left = x + 'px'; olive.style.top = y + 'px'; };
 
-  olive.addEventListener('pointerdown', (e) => {
-    olive.setPointerCapture(e.pointerId);
-    startDrag(e.clientX, e.clientY);
+  const showHint = () => {
+    if (sessionStorage.getItem('oliveHintShown')) return;
+    sessionStorage.setItem('oliveHintShown', '1');
+    const hint = document.createElement('div');
+    hint.className = 'olive-hint';
+    hint.textContent = 'Drag me — try throwing me!';
+    document.body.appendChild(hint);
+    const r = olive.getBoundingClientRect();
+    hint.style.left = (r.left - 30) + 'px';
+    hint.style.top = (r.bottom + 10) + 'px';
+    requestAnimationFrame(() => hint.classList.add('show'));
+    setTimeout(() => { hint.classList.remove('show'); setTimeout(() => hint.remove(), 600); }, 4200);
+  };
+
+  // heavenly entrance: drop in from off-screen with a light beam
+  olive.style.left = x + 'px';
+  olive.style.top = '-200px';
+  olive.style.opacity = '0';
+  requestAnimationFrame(() => {
+    olive.classList.add('beam');
+    setTimeout(() => {
+      olive.classList.add('falling');
+      olive.style.opacity = '1';
+      olive.style.top = y + 'px';
+    }, 250);
   });
-  olive.addEventListener('pointermove', (e) => moveDrag(e.clientX, e.clientY));
-  olive.addEventListener('pointerup', endDrag);
-  olive.addEventListener('pointercancel', endDrag);
+  setTimeout(() => {
+    olive.classList.remove('falling');
+    olive.classList.add('settled');
+    physicsActive = true;
+    showHint();
+  }, 1500);
+
+  function runPhysics() {
+    if (!dragging && physicsActive && (Math.abs(vx) > 0.05 || Math.abs(vy) > 0.05)) {
+      olive.classList.remove('settled');
+      x += vx; y += vy;
+      vx *= 0.985; vy *= 0.985;
+      const maxX = window.innerWidth - W(), maxY = window.innerHeight - H();
+      if (x <= 0) { x = 0; vx = -vx * 0.72; }
+      if (x >= maxX) { x = maxX; vx = -vx * 0.72; }
+      if (y <= 0) { y = 0; vy = -vy * 0.72; }
+      if (y >= maxY) { y = maxY; vy = -vy * 0.72; }
+      place();
+    } else if (!dragging && physicsActive && !olive.classList.contains('settled')) {
+      vx = 0; vy = 0;
+      olive.classList.add('settled');
+    }
+    requestAnimationFrame(runPhysics);
+  }
+  requestAnimationFrame(runPhysics);
+
+  const onDown = (clientX, clientY, pointerId, target) => {
+    if (!physicsActive) return;
+    dragging = true;
+    vx = 0; vy = 0;
+    olive.classList.remove('settled');
+    olive.classList.add('dragging');
+    history = [{ x: clientX, y: clientY, t: performance.now() }];
+    if (pointerId !== undefined) target.setPointerCapture(pointerId);
+  };
+  const onMove = (clientX, clientY) => {
+    if (!dragging) return;
+    x = clientX - W() / 2;
+    y = clientY - H() / 2;
+    place();
+    history.push({ x: clientX, y: clientY, t: performance.now() });
+    if (history.length > 6) history.shift();
+  };
+  const onUp = () => {
+    if (!dragging) return;
+    dragging = false;
+    olive.classList.remove('dragging');
+    if (history.length >= 2) {
+      const a = history[0], b = history[history.length - 1];
+      const dt = Math.max(b.t - a.t, 16);
+      vx = ((b.x - a.x) / dt) * 16;
+      vy = ((b.y - a.y) / dt) * 16;
+    }
+  };
+
+  olive.addEventListener('pointerdown', (e) => onDown(e.clientX, e.clientY, e.pointerId, olive));
+  window.addEventListener('pointermove', (e) => onMove(e.clientX, e.clientY));
+  window.addEventListener('pointerup', onUp);
+  window.addEventListener('pointercancel', onUp);
+
+  window.addEventListener('resize', () => {
+    x = Math.min(x, window.innerWidth - W());
+    y = Math.min(y, window.innerHeight - H());
+  });
 }
 
 // interactive hover tilt on photos
