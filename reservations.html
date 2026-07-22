@@ -91,17 +91,18 @@
   <div class="section-head reveal"><div><span class="tag">Request a table</span><h2>Send a reservation request</h2></div>
     <p>This form sends your details our way — for same-day or urgent bookings, please call us directly at (403) 262-8480.</p>
   </div>
-  <form id="reservation-form" class="reveal">
+  <form id="reservation-form" class="reveal" action="https://formspree.io/f/mpqvljgz" method="POST">
+    <input type="hidden" name="_subject" value="New reservation request from Bonterra website">
     <div class="form-grid">
-      <div><label for="r-name">Name</label><input type="text" id="r-name" required></div>
-      <div><label for="r-phone">Phone</label><input type="tel" id="r-phone" required></div>
-      <div><label for="r-date">Date</label><input type="date" id="r-date" required></div>
-      <div><label for="r-time">Time</label><input type="time" id="r-time" required></div>
-      <div><label for="r-party">Party size</label><input type="number" id="r-party" min="1" max="20" required></div>
+      <div><label for="r-name">Name</label><input type="text" id="r-name" name="name" required></div>
+      <div><label for="r-phone">Phone</label><input type="tel" id="r-phone" name="phone" required></div>
+      <div><label for="r-date">Date</label><input type="date" id="r-date" name="date" required></div>
+      <div><label for="r-time">Time</label><input type="time" id="r-time" name="time" required></div>
+      <div><label for="r-party">Party size</label><input type="number" id="r-party" name="party_size" min="1" max="20" required></div>
       <div><label for="r-seating">Seating</label>
-        <select id="r-seating"><option>Indoor</option><option>Patio (weather permitting)</option><option>Bar</option><option>No preference</option></select>
+        <select id="r-seating" name="seating"><option>Indoor</option><option>Patio (weather permitting)</option><option>Bar</option><option>No preference</option></select>
       </div>
-      <div class="full"><label for="r-notes">Notes (allergies, occasion, etc.)</label><textarea id="r-notes"></textarea></div>
+      <div class="full"><label for="r-notes">Notes (allergies, occasion, etc.)</label><textarea id="r-notes" name="notes"></textarea></div>
       <div class="full">
         <button type="submit" class="submit-btn">Request table</button>
         <p class="form-note" id="reservation-note">We'll confirm by phone or email within 24 hours.</p>

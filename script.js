@@ -95,20 +95,61 @@ if (toggle && nav) {
   }));
 }
 
-// reservation form (static demo — wire to OpenTable/your booking provider)
+// reservation form -> Formspree
+function submitToFormspree(form, note, messages) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const originalLabel = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    if (note) { note.textContent = ''; note.style.color = ''; }
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then((response) => {
+      if (response.ok) {
+        if (note) note.textContent = messages.success;
+        form.reset();
+      } else {
+        response.json().then((data) => {
+          if (note) {
+            note.textContent = (data && data.errors)
+              ? data.errors.map(err => err.message).join(', ')
+              : messages.error;
+            note.style.color = '#c96a5a';
+          }
+        }).catch(() => {
+          if (note) { note.textContent = messages.error; note.style.color = '#c96a5a'; }
+        });
+      }
+    }).catch(() => {
+      if (note) { note.textContent = messages.error; note.style.color = '#c96a5a'; }
+    }).finally(() => {
+      if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
+    });
+  });
+}
+
 const resForm = document.getElementById('reservation-form');
 if (resForm) {
-  resForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const note = document.getElementById('reservation-note');
-    if (note) note.textContent = "Thanks — for now please call (403) 262-8480 or book via OpenTable to confirm your table.";
+  submitToFormspree(resForm, document.getElementById('reservation-note'), {
+    success: "Thanks — your request is in. We'll confirm by phone or email within 24 hours.",
+    error: "Something went wrong sending that — please call (403) 262-8480 to book directly."
   });
 }
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const note = document.getElementById('contact-note');
-    if (note) note.textContent = "Thanks for reaching out — we'll get back to you shortly.";
+  submitToFormspree(contactForm, document.getElementById('contact-note'), {
+    success: "Thanks for reaching out — we'll get back to you shortly.",
+    error: "Something went wrong sending that — please email info@bonterra.ca directly."
+  });
+}
+const newsletterForm = document.getElementById('newsletter-form');
+if (newsletterForm) {
+  submitToFormspree(newsletterForm, document.getElementById('newsletter-note'), {
+    success: "You're on the list — thanks for signing up.",
+    error: "Something went wrong signing up — please try again."
   });
 }

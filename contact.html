@@ -75,12 +75,13 @@
   <div class="section-head reveal"><div><span class="tag">Send a message</span><h2>Get in touch</h2></div>
     <p>For events, use our <a href="events.html" style="color:var(--brass);">Events page</a> instead so it reaches the right inbox.</p>
   </div>
-  <form id="contact-form" class="reveal">
+  <form id="contact-form" class="reveal" action="https://formspree.io/f/mpqvljgz" method="POST">
+    <input type="hidden" name="_subject" value="New message from Bonterra website contact form">
     <div class="form-grid">
-      <div><label for="c-name">Name</label><input type="text" id="c-name" required></div>
-      <div><label for="c-email">Email</label><input type="email" id="c-email" required></div>
-      <div class="full"><label for="c-phone">Phone (optional)</label><input type="tel" id="c-phone"></div>
-      <div class="full"><label for="c-message">Message</label><textarea id="c-message" required></textarea></div>
+      <div><label for="c-name">Name</label><input type="text" id="c-name" name="name" required></div>
+      <div><label for="c-email">Email</label><input type="email" id="c-email" name="email" required></div>
+      <div class="full"><label for="c-phone">Phone (optional)</label><input type="tel" id="c-phone" name="phone"></div>
+      <div class="full"><label for="c-message">Message</label><textarea id="c-message" name="message" required></textarea></div>
       <div class="full">
         <button type="submit" class="submit-btn">Send message</button>
         <p class="form-note" id="contact-note"></p>
@@ -91,11 +92,13 @@
   <div style="max-width:480px;margin-top:10vh;">
     <h3 style="font-family:'Fraunces',serif;font-style:italic;font-size:24px;margin-bottom:14px;">Keep up to date</h3>
     <p style="color:var(--parchment-dim);font-size:15px;margin-bottom:20px;">Very occasionally we send an exclusive email — sign up to hear about seasonal dinners.</p>
-    <form style="display:flex;gap:14px;flex-wrap:wrap;">
-      <input type="text" placeholder="Your name" style="flex:1;min-width:140px;">
-      <input type="email" placeholder="Your email" style="flex:1;min-width:140px;">
+    <form id="newsletter-form" style="display:flex;gap:14px;flex-wrap:wrap;" action="https://formspree.io/f/mpqvljgz" method="POST">
+      <input type="hidden" name="_subject" value="New newsletter signup from Bonterra website">
+      <input type="text" name="name" placeholder="Your name" style="flex:1;min-width:140px;">
+      <input type="email" name="email" placeholder="Your email" required style="flex:1;min-width:140px;">
       <button type="submit" class="submit-btn" style="margin-top:0;">Sign up</button>
     </form>
+    <p class="form-note" id="newsletter-note"></p>
   </div>
 </section>
 
