@@ -1,6 +1,22 @@
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
-  if (loader) setTimeout(() => loader.classList.add('done'), 1400);
+  const greetEl = document.getElementById('loaderGreet');
+  if (loader && greetEl && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const greetings = ['Ciao', 'Hello', 'Bonjour', 'Hola', 'Buongiorno'];
+    const step = 400;
+    greetings.forEach((word, i) => {
+      setTimeout(() => {
+        greetEl.textContent = word;
+        greetEl.classList.remove('show');
+        void greetEl.offsetWidth;
+        greetEl.classList.add('show');
+      }, i * step);
+    });
+    setTimeout(() => { greetEl.style.opacity = '0'; }, greetings.length * step);
+  } else if (greetEl) {
+    greetEl.remove();
+  }
+  if (loader) setTimeout(() => loader.classList.add('done'), 2600);
 });
 
 const io = new IntersectionObserver((entries) => {
