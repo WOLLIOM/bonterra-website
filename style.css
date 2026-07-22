@@ -235,7 +235,7 @@
     font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;
     text-transform:uppercase;color:var(--parchment-dim);margin-right:48px;
   }
-  .ticker span b{color:var(--brass);font-weight:500;}
+  .ticker span b, .ticker span .tick-em{color:var(--brass);font-weight:500;}
   @keyframes scrollTicker{from{transform:translateX(0);}to{transform:translateX(-100%);}}
 
   section{padding:14vh 5vw;position:relative;}
