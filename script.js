@@ -95,22 +95,72 @@ if (siteHeader) {
   window.addEventListener('scroll', setHeaderState, { passive: true });
 }
 
-// background music toggle
+// background music — on by default, with fallback for browsers that block autoplay
 const musicToggle = document.getElementById('musicToggle');
 const bgAudio = document.getElementById('bgAudio');
 if (musicToggle && bgAudio) {
-  bgAudio.volume = 0.35;
+  bgAudio.volume = 0.22;
+
+  const syncButton = () => {
+    const playing = !bgAudio.paused;
+    musicToggle.classList.toggle('playing', playing);
+    musicToggle.setAttribute('aria-pressed', String(playing));
+  };
+  bgAudio.addEventListener('play', syncButton);
+  bgAudio.addEventListener('pause', syncButton);
+
+  const tryAutoplay = () => {
+    bgAudio.play().catch(() => {
+      // Autoplay blocked — start on the visitor's first interaction instead.
+      const startOnInteract = () => {
+        bgAudio.play().catch(() => {});
+        window.removeEventListener('click', startOnInteract);
+        window.removeEventListener('touchstart', startOnInteract);
+        window.removeEventListener('keydown', startOnInteract);
+      };
+      window.addEventListener('click', startOnInteract, { once: true });
+      window.addEventListener('touchstart', startOnInteract, { once: true });
+      window.addEventListener('keydown', startOnInteract, { once: true });
+    });
+  };
+  tryAutoplay();
+
   musicToggle.addEventListener('click', () => {
-    if (bgAudio.paused) {
-      bgAudio.play().catch(() => {});
-      musicToggle.classList.add('playing');
-      musicToggle.setAttribute('aria-pressed', 'true');
-    } else {
-      bgAudio.pause();
-      musicToggle.classList.remove('playing');
-      musicToggle.setAttribute('aria-pressed', 'false');
-    }
+    if (bgAudio.paused) bgAudio.play().catch(() => {});
+    else bgAudio.pause();
   });
+}
+
+// draggable floating olive
+const olive = document.getElementById('driftOlive');
+if (olive) {
+  let dragging = false, offX = 0, offY = 0;
+  const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+
+  const startDrag = (x, y) => {
+    dragging = true;
+    olive.classList.add('dragging');
+    const rect = olive.getBoundingClientRect();
+    offX = x - rect.left;
+    offY = y - rect.top;
+  };
+  const moveDrag = (x, y) => {
+    if (!dragging) return;
+    const w = olive.offsetWidth, h = olive.offsetHeight;
+    const left = clamp(x - offX, 4, window.innerWidth - w - 4);
+    const top = clamp(y - offY, 4, window.innerHeight - h - 4);
+    olive.style.left = left + 'px';
+    olive.style.top = top + 'px';
+  };
+  const endDrag = () => { dragging = false; olive.classList.remove('dragging'); };
+
+  olive.addEventListener('pointerdown', (e) => {
+    olive.setPointerCapture(e.pointerId);
+    startDrag(e.clientX, e.clientY);
+  });
+  olive.addEventListener('pointermove', (e) => moveDrag(e.clientX, e.clientY));
+  olive.addEventListener('pointerup', endDrag);
+  olive.addEventListener('pointercancel', endDrag);
 }
 
 // mobile nav
