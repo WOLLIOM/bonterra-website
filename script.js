@@ -1,7 +1,8 @@
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   const greetEl = document.getElementById('loaderGreet');
-  if (loader && greetEl && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const introShown = sessionStorage.getItem('bonterraIntroShown');
+  if (loader && greetEl && !introShown && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const greetings = ['Ciao', 'Hello', 'Bonjour', 'Hola', 'Buongiorno'];
     const step = 400;
     greetings.forEach((word, i) => {
@@ -13,10 +14,12 @@ window.addEventListener('load', () => {
       }, i * step);
     });
     setTimeout(() => { greetEl.style.opacity = '0'; }, greetings.length * step);
+    sessionStorage.setItem('bonterraIntroShown', '1');
   } else if (greetEl) {
     greetEl.remove();
+    if (loader) loader.classList.add('quick');
   }
-  if (loader) setTimeout(() => loader.classList.add('done'), 2600);
+  if (loader) setTimeout(() => loader.classList.add('done'), introShown ? 650 : 2600);
 });
 
 const io = new IntersectionObserver((entries) => {
@@ -136,14 +139,14 @@ const resForm = document.getElementById('reservation-form');
 if (resForm) {
   submitToFormspree(resForm, document.getElementById('reservation-note'), {
     success: "Thanks — your request is in. We'll confirm by phone or email within 24 hours.",
-    error: "Something went wrong sending that — please call (403) 262-8480 to book directly."
+    error: "Something went wrong sending that — please call (403) 903-0856 to book directly."
   });
 }
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   submitToFormspree(contactForm, document.getElementById('contact-note'), {
     success: "Thanks for reaching out — we'll get back to you shortly.",
-    error: "Something went wrong sending that — please email info@bonterra.ca directly."
+    error: "Something went wrong sending that — please email Simon0021maxam@gmail.com directly."
   });
 }
 const newsletterForm = document.getElementById('newsletter-form');
